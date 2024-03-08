@@ -1,12 +1,11 @@
 const elementoInserirLivros = document.getElementById('livros')
 
 function exibirLivros(listaLivros) {
-
-    let disponibilidade = ''
+    elementoInserirLivros.innerHTML = ''
+    
 
     listaLivros.forEach(livro => {
-
-        (livro.quantidade <= 0) ? disponibilidade = 'indisponivel' : disponibilidade = ''
+        let disponibilidade = (livro.quantidade <= 0) ? 'indisponivel' : ''
 
         elementoInserirLivros.innerHTML += `
             <div class="livro">
@@ -22,4 +21,5 @@ function exibirLivros(listaLivros) {
          </div>
         `
     })
+
 }
